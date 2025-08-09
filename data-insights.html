@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Insights - See how Melbourne is moving | Parking Solutions</title>
+    <meta name="description" content="Car ownership and population growth are reshaping the way Melbourne moves. Our dashboards help you see how these trends impact congestion and parking demand">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/data-insights.css">
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Website Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L22 12H18V32H6V12H2L12 2Z" stroke="white" stroke-width="3.5" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Parking Solutions</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="data-insights.html" class="nav-link">View Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="parking-page.html" class="nav-link">Find Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="eco-page.html" class="nav-link">Go Green</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-basic">
+        <div class="hero-basic-container">
+            <div class="hero-basic-content">
+                <h1 class="hero-basic-title">
+                    See how Melbourne is moving
+                </h1>
+                <p class="hero-basic-subtitle">
+                    Car ownership and population growth are reshaping the way Melbourne moves. Our dashboards help you see how these trends impact congestion and parking demand and give you the data to plan smarter.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 1: Melbourne's vehicles on the rise -->
+    <section class="panel-reverse">
+        <div class="panel-reverse-container">
+            <div class="panel-reverse-content">
+                <h2 class="panel-reverse-title">Melbourne's vehicles on the rise</h2>
+                <div class="panel-reverse-text">
+                    <p>
+                        Car ownership plays a key role in how cities move and grow. Melbourne's evolving lifestyle and transport needs have influenced how people choose to travel, with personal vehicles often seen as a flexible and convenient option. However, more cars on the road can create new challenges for parking and congestion. Exploring these trends helps highlight opportunities to plan smarter journeys and support a balanced, efficient transport network.
+                    </p>
+                </div>
+            </div>
+            <div class="panel-reverse-image">
+                <div id="vehicle-chart" class="panel-reverse-image-content">Loading…</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 2: CBD population trends -->
+    <section class="panel-reverse">
+        <div class="panel-reverse-container">
+            <div class="panel-reverse-content">
+                <h2 class="panel-reverse-title">CBD population trends</h2>
+                <div class="panel-reverse-text">
+                    <p>
+                        Discover how Melbourne's CBD is evolving year by year. Our visuals bring population changes to life, making it easy to spot growth patterns and understand how the city is transforming over time.
+                    </p>
+                </div>
+            </div>
+            <div class="panel-reverse-image">
+                <div id="population-chart" class="panel-reverse-image-content">Loading…</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Card Grid with Icons -->
+    <section class="card-grid-icon">
+        <div class="card-grid-icon-container">
+            <div class="card-grid-icon-header">
+                <h2 class="card-grid-icon-title">The data behind your daily drive</h2>
+            </div>
+            <div class="card-grid-icon-cards">
+                <!-- Card 1: Current Population -->
+                <article class="card-icon">
+                    <div class="card-icon-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4C18.21 4 20 5.79 20 8C20 10.21 18.21 12 16 12C13.79 12 12 10.21 12 8C12 5.79 13.79 4 16 4ZM16 14C21.33 14 25.67 16.33 26 20V22H6V20C6.33 16.33 10.67 14 16 14Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="card-icon-body">
+                        <h3 class="card-icon-title">Current Population (CBD)</h3>
+                        <p class="card-icon-description"><span id="summary-population-value">--</span> residents</p>
+                    </div>
+                </article>
+
+                <!-- Card 2: Car Ownership Rate -->
+                <article class="card-icon">
+                    <div class="card-icon-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 20L8 16L12 20L16 16L20 20L24 16L28 20V24H4V20Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                            <path d="M8 12L12 8L16 12L20 8L24 12L28 8V16H8V12Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="card-icon-body">
+                        <h3 class="card-icon-title">Car Ownership Rate</h3>
+                        <p class="card-icon-description"><span id="summary-ownership-rate">--</span> cars per household</p>
+                    </div>
+                </article>
+
+                <!-- Card 3: Average Congestion Index -->
+                <article class="card-icon">
+                    <div class="card-icon-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 4C20.42 4 24 7.58 24 12C24 16.42 20.42 20 16 20C11.58 20 8 16.42 8 12C8 7.58 11.58 4 16 4ZM16 22C22.63 22 28 17.51 28 12C28 6.49 22.63 2 16 2C9.37 2 4 6.49 4 12C4 17.51 9.37 22 16 22Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                            <path d="M12 12C12 10.9 12.9 10 14 10C15.1 10 16 10.9 16 12C16 13.1 15.1 14 14 14C12.9 14 12 13.1 12 12Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                            <path d="M18 12C18 10.9 18.9 10 20 10C21.1 10 22 10.9 22 12C22 13.1 21.1 14 20 14C18.9 14 18 13.1 18 12Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                            <path d="M10 16C10 14.9 10.9 14 12 14C13.1 14 14 14.9 14 16C14 17.1 13.1 18 12 18C10.9 18 10 17.1 10 16Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                            <path d="M18 16C18 14.9 18.9 14 20 14C21.1 14 22 14.9 22 16C22 17.1 21.1 18 20 18C18.9 18 18 17.1 18 16Z" stroke="#1E1E1E" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="card-icon-body">
+                        <h3 class="card-icon-title">Average Congestion Index</h3>
+                        <p class="card-icon-description">68% peak congestion (example)</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L22 12H18V32H6V12H2L12 2Z" stroke="#1E1E1E" stroke-width="3.5" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-title">Home</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html" class="footer-link">Parking Solutions</a></li>
+                    <li><a href="data-insights.html" class="footer-link">View Insights</a></li>
+                    <li><a href="eco-page.html" class="footer-link">Go Green</a></li>
+
+                    <li><a href="#" class="footer-link">Team collaboration</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- API config and scripts -->
+    <script>
+      window.API_CONFIG = {
+        BASE_URL: '', // 如后端与页面不同域，请填写如 'http://localhost:3000'
+        API_KEY: '',  // 若需要鉴权可填写，否则留空
+        USE_MOCK: true
+      };
+    </script>
+    <script src="js/api-client.js"></script>
+    <script src="js/population-insights.js"></script>
+    <script src="js/vehicle-insights.js"></script>
+    <script src="js/summary-insights.js"></script>
+  </body>
+</html> 

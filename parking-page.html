@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Page - Find Parking Faster. Drive Smarter. Go Greener.</title>
+    <meta name="description" content="Plan ahead with confidence. Our parking tools give you real-time updates, predict future availability and show historical patterns.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/parking-page.css">
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Website Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L22 12H18V32H6V12H2L12 2Z" stroke="white" stroke-width="3.5" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link">Parking Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="data-insights.html" class="nav-link">View Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="parking-page.html" class="nav-link">Find Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="eco-page.html" class="nav-link">Go Green</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="parking-hero">
+        <div class="parking-hero-container">
+            <div class="parking-hero-content">
+                <h1 class="parking-hero-title">
+                    Where are you going today?
+                </h1>
+                <p class="parking-hero-subtitle">
+                    Stop circling the block. Our parking tools give you real-time updates, predict future availability and show historical patterns so you can spend less time searching and more time where you need to be.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 1: Plan ahead with confidence (Form + Map) -->
+    <section class="parking-panel-form-map">
+        <div class="panel-container">
+            <div class="panel-content">
+                <h2 class="parking-panel-title">Plan ahead with confidence</h2>
+                <!-- Form inputs - Location, Date, and Time -->
+                <div class="parking-form">
+                    <div class="form-group">
+                        <label>Search Mode</label>
+                        <div>
+                            <label style="margin-right:16px;">
+                                <input type="radio" name="search-mode" id="mode-nearby" value="nearby" checked>
+                                Nearby by coordinates
+                            </label>
+                            <label>
+                                <input type="radio" name="search-mode" id="mode-history" value="history">
+                                History by datetime
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input id="location" class="form-input" type="text" placeholder="Click on the map to choose coordinates" readonly>
+                        
+                    </div>
+                    <div class="form-group" id="group-date">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-input" placeholder="MM/DD/YYYY">
+                    </div>
+                    <div class="form-group" id="group-time">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" class="form-input" placeholder="HH:MM">
+                    </div>
+                    <button id="find-parking-btn" class="btn btn-primary">Find Parking</button>
+                    <div id="search-results" class="search-results hide"></div>
+                    <div id="places-list" class="places-list" aria-live="polite"></div>
+                </div>
+            </div>
+            <div class="panel-image">
+                <!-- Map container (Google Maps will render here) -->
+                <div class="map-container">
+                    <div id="gmap"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 2: Predict & park smarter (Chart + Text) -->
+    <section class="parking-panel-chart-text">
+        <div class="panel-container">
+            <div class="panel-image">
+                <!-- Chart placeholder -->
+                <div class="chart-container">
+                    <div class="chart-placeholder">
+                        <div class="chart-content">
+                            <div class="chart-y-axis">
+                                <div class="y-label">70</div>
+                                <div class="y-label">60</div>
+                                <div class="y-label">50</div>
+                                <div class="y-label">40</div>
+                                <div class="y-label">30</div>
+                            </div>
+                            <div class="chart-line">
+                                <svg width="400" height="200" viewBox="0 0 400 200">
+                                    <polyline 
+                                        points="20,180 60,160 100,140 140,120 180,100 220,80 260,60 300,40 340,20 380,10" 
+                                        fill="none" 
+                                        stroke="#4A90E2" 
+                                        stroke-width="3"/>
+                                </svg>
+                            </div>
+                            <div class="chart-x-axis">
+                                <div class="x-label">2011</div>
+                                <div class="x-label">2012</div>
+                                <div class="x-label">2013</div>
+                                <div class="x-label">2014</div>
+                                <div class="x-label">2015</div>
+                                <div class="x-label">2016</div>
+                                <div class="x-label">2017</div>
+                                <div class="x-label">2018</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-content">
+                <h2 class="parking-panel-title">Predict & park smarter</h2>
+                <div class="parking-panel-text">
+                    <p>
+                        No more guessing games. Our forecast tool uses past trends and live updates to predict where parking will be available before you even leave home. Choose the best time and location to park with confidence and save yourself the stress of last‑minute searching.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel 3: Learn from the past (Text + Form) -->
+    <section class="parking-panel-text-form">
+        <div class="panel-container">
+            <div class="panel-content">
+                <h2 class="parking-panel-title">Learn from the past</h2>
+                <div class="parking-panel-text">
+                    <p>
+                        Understand when and where parking is typically available with a clear view of past patterns. Spot peak times, quiet periods, and recurring trends so you can plan your trips when parking is easiest.
+                    </p>
+                </div>
+            </div>
+            <div class="panel-image">
+                <!-- Form for search -->
+                <div class="search-form-container">
+                    <div class="parking-form">
+                        <div class="form-group">
+                            <label for="search-location">Location</label>
+                            <select id="search-location" class="form-input">
+                                <option value="">Select location</option>
+                                <option value="cbd">CBD</option>
+                                <option value="melbourne-central">Melbourne Central</option>
+                                <option value="southbank">Southbank</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="search-date">Date</label>
+                            <input type="date" id="search-date" class="form-input">
+                        </div>
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <svg width="24" height="36" viewBox="0 0 24 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L22 12H18V32H6V12H2L12 2Z" stroke="#1E1E1E" stroke-width="3.5" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-title">Home</h4>
+                <ul class="footer-list">
+                    <li><a href="index.html" class="footer-link">Parking Solutions</a></li>
+                    <li><a href="data-insights.html" class="footer-link">City Insights</a></li>
+                    <li><a href="eco-page.html" class="footer-link">Go Green</a></li>
+                    <li><a href="#" class="footer-link">Contact Us</a></li>
+                    <li><a href="#" class="footer-link">Team collaboration</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- API config and scripts -->
+    <!-- 接口配置说明：
+         1) 在下方 window.API_CONFIG 中配置接口地址与开关。
+            - BASE_URL: 后端根地址（如使用 json-server 则为 'http://localhost:3000'）。
+            - USE_MOCK: 为 true 时仅使用本地 mock 文件（/data/mock-parking.json）。
+                        为 false 时优先请求后端（BASE_URL + 具体 path），失败或空数据再回退本地 mock。
+            - GMAPS_API_KEY: Google 地图 JS API 的密钥。
+         2) 具体接口 path 在 js/parking-search.js 内部设置：
+            - 附近车位：GET /parking/nearby?lat=...&lng=...
+            - 历史查询：GET /parking/history?datetime=ISO8601
+         3) URL 的拼接逻辑在 js/api-client.js 的 buildUrl 中实现（BASE_URL + path + 查询参数）。
+    -->
+    <script>
+      window.API_CONFIG = {
+        BASE_URL: '', // 后端根地址；示例：'http://localhost:3000'（json-server）或团队后端地址
+        API_KEY: '',  // 若后端需要鉴权可填写令牌；无需鉴权则留空
+        USE_MOCK: true, // true: 仅用本地 /data/mock-parking.json；false: 优先请求后端，失败再回退 mock
+        GMAPS_API_KEY: 'AIzaSyDnje6FeFVKBcakX22CPaFQphEP7Uzx9bk' // Google Maps JavaScript API 密钥
+      };
+    </script>
+    <script src="js/api-client.js"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/parking-search.js"></script>
+</body>
+</html> 

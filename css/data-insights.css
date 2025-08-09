@@ -1,0 +1,274 @@
+/* Data Insights Page Specific Styles */
+
+/* Hero Basic Section */
+.hero-basic {
+    background-color: rgba(0, 51, 102, 0.1);
+    padding: var(--spacing-hero) var(--spacing-xxl);
+    min-height: 538px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-basic-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-basic-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-basic-title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-basic-subtitle {
+    font-size: var(--font-size-large);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Panel Reverse Layout */
+.panel-reverse {
+    background-color: var(--background-white);
+    padding: var(--spacing-xxl);
+    opacity: 0.8;
+}
+
+.panel-reverse-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.panel-reverse-content {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.panel-reverse-title {
+    font-size: var(--font-size-medium);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.panel-reverse-text {
+    font-size: var(--font-size-small);
+    line-height: 1.4;
+    color: var(--text-primary);
+}
+
+.panel-reverse-text p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.panel-reverse-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.panel-reverse-image-content {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Grid with Icons */
+.card-grid-icon {
+    background-color: rgba(0, 51, 102, 0.05);
+    padding: var(--spacing-xxl);
+}
+
+.card-grid-icon-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.card-grid-icon-header {
+    text-align: left;
+}
+
+.card-grid-icon-title {
+    font-size: var(--font-size-medium);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.card-grid-icon-cards {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+/* Icon Cards */
+.card-icon {
+    background-color: var(--background-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.card-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-white);
+    border-radius: var(--border-radius);
+}
+
+.card-icon-body {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.card-icon-title {
+    font-size: var(--font-size-medium);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.card-icon-description {
+    font-size: var(--font-size-small);
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+
+/* Responsive Design for Data Insights */
+@media (max-width: 768px) {
+    .hero-basic-title {
+        font-size: 48px;
+    }
+    
+    .hero-basic-subtitle {
+        font-size: 24px;
+    }
+    
+    .panel-reverse-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .panel-reverse-content {
+        order: 2;
+    }
+    
+    .panel-reverse-image {
+        order: 1;
+    }
+    
+    .card-grid-icon-cards {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .card-icon {
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-basic {
+        padding: 80px var(--spacing-sm);
+    }
+    
+    .hero-basic-title {
+        font-size: 36px;
+    }
+    
+    .hero-basic-subtitle {
+        font-size: 18px;
+    }
+    
+    .panel-reverse {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    .card-grid-icon {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+    
+    .card-icon {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Animation for icon cards */
+.card-icon {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.card-icon:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.card-icon:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Focus styles for accessibility */
+.card-icon:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .hero-basic {
+        background: none;
+        color: black;
+    }
+    
+    .card-icon {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+} 

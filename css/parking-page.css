@@ -1,0 +1,601 @@
+/* Parking Page Specific Styles */
+
+/* Hero Section for Parking Page */
+.parking-hero {
+    background-color: rgba(0, 51, 102, 0.1);
+    padding: 160px 64px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 538px;
+}
+
+.parking-hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.parking-hero-content {
+    max-width: 800px;
+}
+
+.parking-hero-title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #1E1E1E;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.parking-hero-subtitle {
+    font-size: 32px;
+    line-height: 1.2;
+    color: #757575;
+    text-align: center;
+}
+
+/* Panel Form Map styles */
+.parking-panel-form-map {
+    background-color: #FFFFFF;
+    padding: 64px;
+    opacity: 0.8;
+}
+
+.parking-panel-form-map .panel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: stretch; /* 让左右两列等高且并排 */
+    gap: 48px;
+    flex-wrap: nowrap; /* 桌面端保持左右布局，不自动换到下一行 */
+}
+
+.parking-panel-form-map .panel-content {
+    /* 左列（表单）占比略小，让右侧地图更“满” */
+    flex: 0 1 42%;
+    min-width: 300px;
+    max-width: 520px;
+}
+
+.parking-panel-form-map .panel-image {
+    /* 右列（地图）占比更大，去掉宽度上限以便更宽 */
+    flex: 1 1 58%;
+    min-width: 360px;
+    max-width: none;
+}
+
+/* Form styles */
+.parking-form {
+    margin-top: 16px; /* 往上靠一点 */
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1E1E1E;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #1E1E1E;
+    background-color: #FFFFFF;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #003366;
+    box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.1);
+}
+
+.btn-primary {
+    background-color: #1E1E1E;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #333333;
+}
+
+.btn-primary:disabled {
+    background-color: #999999;
+    cursor: not-allowed;
+}
+
+/* Map styles */
+.map-container {
+    width: 100%;
+    /* 提高地图高度，让视觉上更大一些 */
+    height: 420px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+#gmap {
+    width: 100%;
+    height: 100%;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.map-labels {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 60px;
+}
+
+.map-label {
+    position: absolute;
+    font-size: 12px;
+    color: #1E1E1E;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.map-label:nth-child(1) { top: 10%; left: 20%; }
+.map-label:nth-child(2) { top: 15%; left: 60%; }
+.map-label:nth-child(3) { top: 25%; left: 40%; }
+.map-label:nth-child(4) { top: 35%; left: 30%; }
+.map-label:nth-child(5) { top: 45%; left: 70%; }
+.map-label:nth-child(6) { top: 55%; left: 50%; }
+.map-label:nth-child(7) { top: 65%; left: 80%; }
+.map-label:nth-child(8) { top: 75%; left: 20%; }
+.map-label:nth-child(9) { top: 85%; left: 60%; }
+
+.map-roads {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 60px;
+}
+
+.road {
+    position: absolute;
+    font-size: 10px;
+    color: #666666;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.road:nth-child(1) { top: 20%; left: 10%; }
+.road:nth-child(2) { top: 30%; left: 80%; }
+.road:nth-child(3) { top: 50%; left: 15%; }
+.road:nth-child(4) { top: 60%; left: 70%; }
+.road:nth-child(5) { top: 80%; left: 40%; }
+
+.map-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: #666666;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.google-logo {
+    font-weight: 600;
+    color: #4285F4;
+}
+
+/* Form input styles update */
+.form-input[type="date"] {
+    font-family: 'Inter', sans-serif;
+    color: #1E1E1E;
+}
+
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.5);
+}
+
+.form-input[type="date"]::-webkit-datetime-edit {
+    color: #1E1E1E;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    color: #1E1E1E;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit-text {
+    color: #1E1E1E;
+}
+
+.form-input[type="date"]::-webkit-datetime-edit-month-field,
+.form-input[type="date"]::-webkit-datetime-edit-day-field,
+.form-input[type="date"]::-webkit-datetime-edit-year-field {
+    color: #1E1E1E;
+}
+
+.form-input[type="time"] {
+    font-family: 'Inter', sans-serif;
+    color: #1E1E1E;
+}
+
+.form-input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    filter: invert(0.5);
+}
+
+/* Panel Chart Text styles */
+.parking-panel-chart-text {
+    background-color: #FFFFFF;
+    padding: 64px;
+    opacity: 0.8;
+}
+
+.parking-panel-chart-text .panel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.parking-panel-chart-text .panel-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 484px;
+}
+
+.parking-panel-chart-text .panel-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 484px;
+}
+
+/* Chart styles */
+.chart-container {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+.chart-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.chart-y-axis {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 40px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.y-label {
+    font-size: 12px;
+    color: #666666;
+    text-align: right;
+    padding-right: 8px;
+}
+
+.chart-line {
+    position: absolute;
+    left: 40px;
+    top: 0;
+    right: 0;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-x-axis {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    right: 0;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.x-label {
+    font-size: 12px;
+    color: #666666;
+    text-align: center;
+}
+
+/* Panel title and text styles */
+.parking-panel-title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: #1E1E1E;
+    margin-bottom: 24px;
+}
+
+.parking-panel-text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #1E1E1E;
+}
+
+.parking-panel-text p {
+    margin-bottom: 16px;
+}
+
+/* Panel Text Form styles */
+.parking-panel-text-form {
+    background-color: rgba(0, 51, 102, 0.05);
+    padding: 64px;
+    opacity: 0.8;
+}
+
+.parking-panel-text-form .panel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.parking-panel-text-form .panel-content {
+    flex: 1;
+    min-width: 300px;
+    max-width: 484px;
+}
+
+.parking-panel-text-form .panel-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 484px;
+}
+
+/* Search form container */
+.search-form-container {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Parking spots layer for dynamic markers */
+.spots-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: auto;
+    z-index: 10;
+}
+
+/* Parking spot markers */
+.spot-marker {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.spot-marker.available {
+    background-color: #4CAF50;
+    border: 2px solid #2E7D32;
+}
+
+.spot-marker.occupied {
+    background-color: #F44336;
+    border: 2px solid #C62828;
+}
+
+.spot-marker.limited {
+    background-color: #FF9800;
+    border: 2px solid #E65100;
+}
+
+.spot-marker:hover {
+    transform: scale(1.3);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Tooltip for parking spots */
+.spot-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+    transform: translate(-50%, -100%);
+    transition: opacity 0.2s ease;
+}
+
+.spot-tooltip.show {
+    opacity: 1;
+}
+
+/* Results summary */
+.search-results {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666666;
+}
+
+.search-results.show {
+    display: block;
+}
+
+.search-results.hide {
+    display: none;
+}
+
+/* Responsive styles for parking page */
+@media (max-width: 768px) {
+    .parking-hero {
+        padding: 80px 24px;
+        min-height: 400px;
+    }
+    
+    .parking-hero-title {
+        font-size: 48px;
+    }
+    
+    .parking-hero-subtitle {
+        font-size: 24px;
+    }
+    
+    .parking-panel-form-map,
+    .parking-panel-chart-text,
+    .parking-panel-text-form {
+        padding: 32px 24px;
+    }
+    
+    .parking-panel-form-map .panel-container,
+    .parking-panel-chart-text .panel-container,
+    .parking-panel-text-form .panel-container {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .parking-panel-form-map .panel-content,
+    .parking-panel-chart-text .panel-content,
+    .parking-panel-text-form .panel-content,
+    .parking-panel-form-map .panel-image,
+    .parking-panel-chart-text .panel-image,
+    .parking-panel-text-form .panel-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .parking-hero-title {
+        font-size: 36px;
+    }
+    
+    .parking-hero-subtitle {
+        font-size: 20px;
+    }
+    
+    .parking-panel-form-map,
+    .parking-panel-chart-text,
+    .parking-panel-text-form {
+        padding: 24px 16px;
+    }
+} 
+
+.form-hint {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #777;
+} 
+
+.places-list {
+    margin-top: 16px;
+    background: #fff;
+    border: 1px solid var(--border-color, #e5e5e5);
+    border-radius: 8px;
+    overflow: hidden;
+    /* 限制高度：大约显示两条结果，更多可滚动 */
+    max-height: 172px; /* 约两条（含 header 与间距），可按实际再微调 */
+    overflow-y: auto;
+}
+.places-list-header {
+    padding: 12px 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border-color, #e5e5e5);
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+}
+.place-item { padding: 12px 16px; border-bottom: 1px solid var(--border-color, #e5e5e5); }
+.place-item:last-child { border-bottom: none; }
+.place-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.place-title { font-weight: 600; }
+.place-address { font-size: 12px; color: #777; margin-top: 4px; }
+.place-actions { white-space: nowrap; }
+.place-link { color: #1E1E1E; font-weight: 600; text-decoration: underline; cursor: pointer; } 

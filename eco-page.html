@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Page - Your Commute, Your Choice</title>
+    <link rel="stylesheet" href="css/eco-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="36" viewBox="0 0 24 36" fill="none">
+                        <path d="M12 2L22 8V28L12 34L2 28V8L12 2Z" stroke="#E3E3E3" stroke-width="3.5"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Parking Solutions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="data-insights.html" class="nav-link">View Insights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="parking-page.html" class="nav-link">Find Now</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="eco-page.html" class="nav-link">Go Green</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Commute, Your Choice</h1>
+                <p class="hero-subtitle">
+                    Your daily commute choices impact both your time and the environment. 
+                    Our eco tools show how your travel habits affect carbon emissions and 
+                    help you choose greener and smarter ways to get around.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Panel Section -->
+    <section class="panel-section">
+        <div class="panel-container">
+            <div class="panel-content">
+                <h2 class="panel-title">Park green</h2>
+                <p class="panel-text">
+                    Compare your travel options like driving, public transport, cycling, 
+                    or walking and see the difference each choice makes on your carbon footprint.
+                </p>
+                <!-- Form inputs - Location and Date -->
+                <div class="eco-form">
+                    <div class="form-group">
+                        <label for="eco-location">Location</label>
+                        <select id="eco-location" class="form-input">
+                            <option value="">Select location</option>
+                            <option value="cbd">CBD</option>
+                            <option value="melbourne-central">Melbourne Central</option>
+                            <option value="southbank">Southbank</option>
+                            <option value="collins-st">Collins St</option>
+                            <option value="exhibition-st">Exhibition St</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="eco-date">Date</label>
+                        <input type="date" id="eco-date" class="form-input" placeholder="MM/DD/YYYY">
+                    </div>
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+            <div class="panel-image">
+                <!-- Map image with detailed Melbourne map -->
+                <div class="map-container">
+                    <img src="images/panel-image.jpg" alt="Melbourne CBD map showing eco-friendly travel options" class="map-image">
+                    <div class="map-overlay">
+                        <div class="map-labels">
+                            <div class="map-label">Melbourne Central</div>
+                            <div class="map-label">State Library Vic</div>
+                            <div class="map-label">CBD</div>
+                            <div class="map-label">Collins St</div>
+                            <div class="map-label">Exhibition St</div>
+                            <div class="map-label">Yarra River</div>
+                            <div class="map-label">National Gallery of Victoria</div>
+                            <div class="map-label">DFO South Wharf</div>
+                            <div class="map-label">Southbank</div>
+                        </div>
+                        <div class="map-roads">
+                            <div class="road">A60</div>
+                            <div class="road">M1</div>
+                            <div class="road">50</div>
+                            <div class="road">30</div>
+                            <div class="road">20</div>
+                        </div>
+                        <div class="map-footer">
+                            <div class="google-logo">Google</div>
+                            <div class="map-data">Map data ©2025 Google</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <svg width="24" height="36" viewBox="0 0 24 36" fill="none">
+                        <path d="M12 2L22 8V28L12 34L2 28V8L12 2Z" stroke="#1E1E1E" stroke-width="3.5"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3 class="footer-title">Home</h3>
+                <ul class="footer-link-list">
+                    <li><a href="index.html" class="footer-link">Parking Solutions</a></li>
+                    <li><a href="data-insights.html" class="footer-link">View Insights</a></li>
+                    <li><a href="eco-page.html" class="footer-link">Go Green</a></li>
+
+                    <li><a href="#" class="footer-link">Team collaboration</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 

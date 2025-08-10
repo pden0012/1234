@@ -16,7 +16,8 @@
 
       const normalize = (resp) => {
         if (Array.isArray(resp)) return resp;
-        const ok = resp && (resp.code === 0 || resp.code === 200 || resp.code === '0');
+        // 支持多种成功响应码：0, 1, 200, '0', '1'
+        const ok = resp && (resp.code === 0 || resp.code === 1 || resp.code === 200 || resp.code === '0' || resp.code === '1');
         if (!ok) throw new Error((resp && resp.msg) || 'Bad response');
         return Array.isArray(resp.data) ? resp.data : [];
       };

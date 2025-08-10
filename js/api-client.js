@@ -4,8 +4,8 @@
    - API_KEY?:  string   若后端需要鉴权可填；无需鉴权则留空
 
    用法：
-   window.api.get('/parking/nearby', { lat: -37.81, lng: 144.96 })
-   window.api.get('/parking/history', { datetime: '2025-08-10T10:30:00Z' })
+                      window.api.get('/nearParking', { lat: -37.81, lng: 144.96 })
+                   window.api.get('/historyParking', { datetime: '2025-08-10T10:30:00Z' })
 
    URL 拼接：buildUrl 会使用 BASE_URL + path，并把 params 作为查询参数追加。
    注意：若跨域访问，请确保后端已正确设置 CORS 允许当前页面源。

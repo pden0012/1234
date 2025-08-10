@@ -1,6 +1,6 @@
 /* Parking search: fetch two endpoints and render markers
-   - Nearby (by coordinates): GET /parking/nearby?lat&lng
-   - History (by datetime):   GET /parking/history?datetime
+   - Nearby (by coordinates): GET /nearParking?lat&lng
+   - History (by datetime):   GET /historyParking?datetime
 */
 (function () {
   function ready(fn){ document.readyState==='loading' ? document.addEventListener('DOMContentLoaded', fn) : fn(); }
@@ -55,23 +55,23 @@
         let path = '';
         let queryOrigin = null;
         // 接口路径与参数说明：
-        // - 附近车位（坐标搜）：GET /parking/nearby?lat=...&lng=...
-        // - 历史查询（按时间）：GET /parking/history?datetime=ISO8601
+        // - 附近车位（坐标搜）：GET /nearParking?lat=...&lng=...
+        // - 历史查询（按时间）：GET /historyParking?datetime=ISO8601
         //   以上 path 会与 parking-page.html 中的 BASE_URL 拼成最终请求地址。
-        //   例如 BASE_URL='http://localhost:3000' 时，请求为：
-        //   http://localhost:3000/parking/nearby?lat=...&lng=...
+        //   例如 BASE_URL='http://3.106.215.122:8080' 时，请求为：
+        //   http://3.106.215.122:8080/nearParking?lat=...&lng=...
         if (mode === 'nearby'){
           const pos = window.gmap?.searchPos || window.gmap?.userPos;
           if (!pos){ show('请在地图上选择坐标或允许定位'); return; }
           params = { lat: pos.lat, lng: pos.lng };
-          path = '/parking/nearby';
+          path = '/nearParking';
           queryOrigin = pos;
         } else {
           const dtLocal = `${date.value}T${time.value}`;
           const dt = new Date(dtLocal);
           const datetimeISO = isNaN(dt.getTime()) ? `${date.value}T${time.value}:00Z` : dt.toISOString();
           params = { datetime: datetimeISO };
-          path = '/parking/history';
+          path = '/historyParking';
           queryOrigin = window.gmap?.searchPos || window.gmap?.userPos || null;
         }
         const spots = await fetchSpots(path, params);
@@ -93,31 +93,27 @@
 
     function show(msg){ if (!results) return; results.textContent = msg; results.classList.remove('hide'); results.classList.add('show'); }
 
-    // 数据获取与回退策略：
-    // 1) 当 window.API_CONFIG.USE_MOCK === true 时，直接读取本地 /data/mock-parking.json
-    // 2) 否则优先请求后端（BASE_URL + path + 查询参数）
-    //    - 支持两种响应格式：
-    //      a) 直接数组：[{ latitude, longitude, unoccupied, total, time }]
-    //      b) 带 data 包裹：{ code: 0|200|'0', data: [...] }
-    //    - 若请求失败或 data 为空数组，则自动回退到本地 mock 文件
+    // 数据获取策略：
+    // 请求后端（BASE_URL + path + 查询参数）
+    // 支持两种响应格式：
+    // a) 直接数组：[{ latitude, longitude, unoccupied, total, time }]
+    // b) 带 data 包裹：{ code: 0|200|'0', data: [...] }
     async function fetchSpots(path, params){
-      const cfg = window.API_CONFIG || {};
-      const LOCAL = '/data/mock-parking.json';
       const normalize = (resp) => {
         if (Array.isArray(resp)) return resp; // 直接数组
-        const ok = resp && (resp.code===0 || resp.code===200 || resp.code==='0');
+        // 后端返回 code: 1 表示成功，code: 0 表示失败
+        const ok = resp && (resp.code===1 || resp.code===0 || resp.code===200 || resp.code==='0');
         return ok && Array.isArray(resp.data) ? resp.data : [];
       };
-      if (cfg.USE_MOCK === true) {
-        const r = await fetch(LOCAL, { headers: { 'Accept': 'application/json' } }); return r.json();
-      }
+      
       try {
-        const resp = await window.api.get(path || '/parking', params);
+        const resp = await window.api.get(path, params);
         const data = normalize(resp);
-        if (!data.length) throw new Error('empty');
+        if (!data.length) throw new Error('后端返回空数据');
         return data;
       } catch (e) {
-        const r = await fetch(LOCAL, { headers: { 'Accept': 'application/json' } }); return r.json();
+        console.error('API请求失败:', e);
+        throw new Error(`连接后端失败: ${e.message}`);
       }
     }
 

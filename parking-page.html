@@ -213,25 +213,24 @@
     </footer>
     
     <!-- API config and scripts -->
-    <!-- 接口配置说明：
-         1) 在下方 window.API_CONFIG 中配置接口地址与开关。
-            - BASE_URL: 后端根地址（如使用 json-server 则为 'http://localhost:3000'）。
-            - USE_MOCK: 为 true 时仅使用本地 mock 文件（/data/mock-parking.json）。
-                        为 false 时优先请求后端（BASE_URL + 具体 path），失败或空数据再回退本地 mock。
-            - GMAPS_API_KEY: Google 地图 JS API 的密钥。
-         2) 具体接口 path 在 js/parking-search.js 内部设置：
-            - 附近车位：GET /parking/nearby?lat=...&lng=...
-            - 历史查询：GET /parking/history?datetime=ISO8601
-         3) URL 的拼接逻辑在 js/api-client.js 的 buildUrl 中实现（BASE_URL + path + 查询参数）。
-    -->
+                    <!-- 接口配置说明：
+                     1) 在下方 window.API_CONFIG 中配置接口地址与开关。
+                        - BASE_URL: 空字符串，使用相对路径（前端和后端部署在一起时）。
+                        - USE_MOCK: 为 true 时仅使用本地 mock 文件，为 false 时请求后端。
+                        - GMAPS_API_KEY: Google 地图 JS API 的密钥。
+                     2) 具体接口 path 在 js/parking-search.js 内部设置：
+                        - 附近车位：GET /nearParking?lat=...&lng=...
+                        - 历史查询：GET /historyParking?datetime=ISO8601
+                     3) URL 的拼接逻辑在 js/api-client.js 的 buildUrl 中实现（相对路径 + 查询参数）。
+                -->
     <script>
-      window.API_CONFIG = {
-        BASE_URL: '', // 后端根地址；示例：'http://localhost:3000'（json-server）或团队后端地址
-        API_KEY: '',  // 若后端需要鉴权可填写令牌；无需鉴权则留空
-        USE_MOCK: true, // true: 仅用本地 /data/mock-parking.json；false: 优先请求后端，失败再回退 mock
-        GMAPS_API_KEY: 'AIzaSyDnje6FeFVKBcakX22CPaFQphEP7Uzx9bk' // Google Maps JavaScript API 密钥
-      };
-    </script>
+  window.API_CONFIG = {
+    BASE_URL: '', // 空字符串，使用相对路径（部署在一起时）
+    API_KEY: '',
+    USE_MOCK: false,
+    GMAPS_API_KEY: 'AIzaSyDnje6FeFVKBcakX22CPaFQphEP7Uzx9bk'
+  };
+</script>
     <script src="js/api-client.js"></script>
     <script src="js/google-map.js"></script>
     <script src="js/parking-search.js"></script>

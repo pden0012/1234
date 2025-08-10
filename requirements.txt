@@ -1,3 +1,4 @@
 # Railway部署所需的Python依赖
 # 实际上我们使用的是Python标准库，不需要额外安装包
-# 但Railway需要这个文件来识别Python项目 
+# 但Railway需要这个文件来识别Python项目
+# 确保Python环境正确配置 

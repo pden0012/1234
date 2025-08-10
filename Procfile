@@ -1,1 +1,1 @@
-web: python railway-proxy.py 
+web: bash start.sh 

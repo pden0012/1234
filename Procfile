@@ -1,1 +1,1 @@
-web: python3 railway-proxy.py 
+web: python railway-proxy.py 

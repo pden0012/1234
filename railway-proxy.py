@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 """
 Railway部署的代理服务器
 解决前端访问后端API的CORS问题

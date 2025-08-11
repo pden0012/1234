@@ -102,7 +102,7 @@
       const normalize = (resp) => {
         if (Array.isArray(resp)) return resp; // 直接数组
         // 后端返回 code: 1 表示成功，code: 0 表示失败
-        const ok = resp && (resp.code===1 || resp.code===0 || resp.code===200 || resp.code==='0');
+        const ok = resp && (resp.code===1 || resp.code===200 || resp.code==='1');
         return ok && Array.isArray(resp.data) ? resp.data : [];
       };
       
